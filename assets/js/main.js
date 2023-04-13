@@ -23,6 +23,8 @@
 const btnGioca = document.getElementById('gioca')
 const selectDifficolta = document.getElementById('difficolta')
 const htmlMain = document.querySelector('main')
+const r = document.querySelector(':root');
+
 
 
 // parte la partita al click del bottone
@@ -35,6 +37,7 @@ btnGioca.addEventListener('click', function(){
 
 function campoMinato(){
     let valoreDifficolta = parseInt(selectDifficolta.value) 
+    myFunction_set(valoreDifficolta)
     // console.log(valoreDifficolta)
 
     htmlMain.innerHTML = ''
@@ -47,7 +50,9 @@ function campoMinato(){
 
     htmlMain.append (divGriglia)
 
-    for(let i = 0; i < 100; i++){
+
+
+    for(let i = 1; i <= valoreDifficolta; i++){
         // console.log(document.querySelector('.griglia'))
 
         let divCella = document.createElement('div')
@@ -57,4 +62,9 @@ function campoMinato(){
         document.querySelector('.griglia').append(divCella)
 
     }
+}
+
+function myFunction_set(x){
+    x = Math.sqrt(x)
+    r.style.setProperty('--numCelle', x);
 }
