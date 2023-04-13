@@ -27,9 +27,34 @@ const htmlMain = document.querySelector('main')
 
 // parte la partita al click del bottone
 btnGioca.addEventListener('click', function(){
-    // invocazione gioco
-
+    // invocazione gioco  
     campoMinato();
 })
 
 // funzione
+
+function campoMinato(){
+    let valoreDifficolta = parseInt(selectDifficolta.value) 
+    // console.log(valoreDifficolta)
+
+    htmlMain.innerHTML = ''
+
+
+    let divGriglia = document.createElement('div')
+    divGriglia.classList.add('griglia')
+    // htmlMain.innerHTML = divGriglia
+    // console.log (divGriglia)
+
+    htmlMain.append (divGriglia)
+
+    for(let i = 0; i < 100; i++){
+        // console.log(document.querySelector('.griglia'))
+
+        let divCella = document.createElement('div')
+        divCella.classList.add('item')
+        divCella.innerText = i
+
+        document.querySelector('.griglia').append(divCella)
+
+    }
+}
