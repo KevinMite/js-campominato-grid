@@ -61,6 +61,12 @@ function campoMinato(){
 
         document.querySelector('.griglia').append(divCella)
 
+        divCella.addEventListener('click', function(){
+
+            this.classList.add('clicked')
+            console.log(i)
+        })
+
     }
 }
 
